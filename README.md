@@ -1,35 +1,49 @@
-# 💻 Prédiction du Prix d’un Ordinateur Portable
+# 📝 Rapport de Projet – Prédiction du Prix des Ordinateurs
 
-Ce projet utilise un modèle de machine learning pour prédire le prix d’un ordinateur portable en fonction de ses caractéristiques techniques (RAM, CPU, SSD, marque, etc.). Une interface simple développée avec **Streamlit** permet de tester facilement les prédictions.
+## 1. 🎯 Introduction
 
----
+Ce projet vise à prédire le prix d’un ordinateur portable à partir de ses caractéristiques techniques (RAM, marque, processeur, GPU, etc.).
 
-## 🚀 Aperçu
+## 2. 📊 Données utilisées
 
-![Demo](https://user-images.githubusercontent.com/demo-placeholder.png) `<!-- Tu peux mettre un screenshot ici -->`
+- **Source :** laptop_data.csv
+- **Colonnes :** Company, CPU, RAM, SSD, GPU, Taille écran, Prix
 
----
+## 3. 🧹 Prétraitement
 
-## 🔧 Fonctionnalités
+- Suppression des unités dans les colonnes (`GB`, `inches`)
+- Encodage des variables catégorielles (`pd.get_dummies`)
+- Remplissage des valeurs manquantes
 
-- Sélection de la **marque**, du **processeur**, de la **RAM**, du **stockage SSD**, de la **taille d’écran** et de la présence ou non d’un **GPU dédié**.
-- Prédiction instantanée du **prix estimé** 💰.
-- Interface web rapide et accessible.
+## 4. 🔎 Analyse exploratoire
 
----
+- Histogrammes des prix
+- Heatmap des corrélations
+- Analyse des distributions
 
-## 🧠 Modèle utilisé
+## 5. 🧠 Modélisation
 
-- **Régression linéaire** entraînée sur un jeu de données de configurations d'ordinateurs.
-- Données prétraitées avec encodage, nettoyage, transformation des variables.
+- Modèle : Régression Linéaire
+- Données divisées en jeu d'entraînement/test
+- Sauvegarde des colonnes pour alignement dans Streamlit
 
----
+## 6. 📈 Évaluation
 
-## 📦 Installation
+- MAE, RMSE, R²
+- Visualisation des performances (facultatif)
 
-1. **Cloner le dépôt :**
+## 7. 🚀 Déploiement
 
-```bash
-git clone https://github.com/ton-pseudo/ton-depot.git
-cd ton-depot
-```
+- Application réalisée avec Streamlit
+- Lancement local : `streamlit run app.py`
+
+## 8. ✅ Conclusion
+
+- Résultats satisfaisants avec la régression linéaire
+- Possibilités : intégrer d'autres modèles, enrichir les données
+
+## 9. 📎 Annexes
+
+- `modele.pkl` : modèle entraîné
+- `colonnes.pkl` : colonnes d'encodage
+- `app.py` : script Streamlit
